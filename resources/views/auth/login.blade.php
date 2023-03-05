@@ -35,6 +35,7 @@
 							
 			      	</div>
 							<form method="POST" action="{{ route('login') }}" class="signin-form">
+                                @csrf
 			      		<div class="form-group mb-3">
 			      			<label class="label float-right" for="name">البريد الإلكتروني</label>
 			      			<input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus>
@@ -42,7 +43,7 @@
 		            <div class="form-group mb-3 ">
 		            	<x-jet-label for="password" class="float-right" value="{{ __('Password') }}" />
                 <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
-           </div>
+                     </div>
 		            <div class="form-group">
 		            	<button type="submit" class="form-control btn btn-primary submit px-3">{{ __('Log in') }}</button>
 		            </div>
