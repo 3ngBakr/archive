@@ -1,7 +1,7 @@
 @extends('back-end.layouts.app')
 
 @section('content')
-    <h1>{{ \Auth::user()->name }}</h1>
+    <h1> مرحبا بك : {{ \Auth::user()->name }}</h1>
 
 
     <div class="container">

@@ -1,4 +1,21 @@
 <div class="mb-3">
+    <label class="form-label required" for="dateOfBublish">@lang('تاريخ النشر')</label>
+    <input class="form-control {{ $errors->has('dateOfBublish') ? 'is-invalid' : '' }}"
+           type="text"
+           id="dateOfBublish"
+          placeholder="تاريخ النشر"
+           name="dateOfBublish"
+           value="{{ isset($row) ? old('dateOfBublish', $row->name) : old('dateOfBublish', '') }}"
+           required aria-describedby="dateOfBublish-invalid">
+    @if($errors->has('dateOfBublish'))
+        <div id="dateOfBublish-invalid" class="invalid-feedback">
+            {{ $errors->first('dateOfBublish') }}
+        </div>
+    @endif
+</div>
+
+
+<div class="mb-3">
     <label class="form-label required" for="name">@lang('العنوان')</label>
     <input class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}"
            type="text"
@@ -32,11 +49,11 @@
 
 
 <div class="mb-3">
-    <label class="form-label required" for="name">@lang('المستقبل')</label>
+    <label class="form-label required" for="name">@lang('المرسل اليه')</label>
     <input class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}"
            type="text"
            id="name"
-          placeholder="المستقبل"
+          placeholder="المرسل اليه"
            name="reciver"
            value="{{ isset($row) ? old('name', $row->name) : old('name', '') }}"
            required aria-describedby="name-invalid">
@@ -49,7 +66,7 @@
 
 
 <div class="mb-3">
-    <label class="form-label" for="description">@lang('Description')</label>
+    <label class="form-label" for="description">@lang('ملاحظة')</label>
     <input class="form-control {{ $errors->has('description') ? 'is-invalid' : '' }}"
            type="text"
            id="description"

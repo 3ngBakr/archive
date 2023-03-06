@@ -16,7 +16,7 @@ class Document extends Model implements HasMedia
 	use HasFactory, InteractsWithMedia, InteractsWithFiles;
 
 	public    $table    = 'documents';
-	protected $fillable = ['name', 'description','sender','reciver'];
+	protected $fillable = ['name', 'description','sender','reciver','dateOfBublish','numberOfPaper','note'];
 	protected $dates    = ['created_at', 'updated_at', 'deleted_at'];
 
 	protected function serializeDate(DateTimeInterface $date): string

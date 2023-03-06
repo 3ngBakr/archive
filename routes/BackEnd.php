@@ -41,30 +41,6 @@ Route::middleware('role:super-admin|admin')->group(function () {
 	Route::resource('doc-types', DocumentTypeController::class)
 	     ->names('document_types')->parameter('doc-types', 'document_type');
 
-	// Our Programs
-	Route::resource('programs', ProgramController::class);
-
-	// Partners
-	Route::resource('partners', PartnerController::class)->except('show');
-
-	// Contacts
-	Route::get('contacts/download/{media}', [ContactController::class, 'download'])->name('contacts.download');
-	Route::resource('contacts', ContactController::class)->only(['index', 'show', 'destroy']);
-
-	//  Blog
-	Route::resource('blogs', BlogController::class);
-
-	// Services
-	Route::resource('services', ServiceController::class);
-
-	// Orders
-	Route::resource('orders', OrderController::class)->only(['index', 'show', 'destroy']);
-
-		// Bages	
-Route::resource('bages', BageController::class);
-Route::resource('socials', SocialController::class);
-  //MAIN
-  Route::resource('mains', MainController::class);
 
 
 });

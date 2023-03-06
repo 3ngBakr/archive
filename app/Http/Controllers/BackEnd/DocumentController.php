@@ -28,6 +28,16 @@ class DocumentController extends BackendController
 		$table->editColumn('name', function ($row) {
 			return $row->name ? $row->name : "";
 		});
+
+		$table->editColumn('dateOfBublish', function ($row) {
+			return $row->dateOfBublish ? $row->dateOfBublish : "";
+		});
+
+		$table->editColumn('numberOfPaper', function ($row) {
+			return $row->numberOfPaper ? $row->numberOfPaper : "";
+		});
+
+
 		$table->editColumn('description', function ($row) {
 			return $row->description ? $row->description : "";
 		});
@@ -71,6 +81,7 @@ class DocumentController extends BackendController
 		$document->addFileFromRequest('file');
 		
 
+		
 		return redirect()->route('admin.documents.index');
 	}
 
