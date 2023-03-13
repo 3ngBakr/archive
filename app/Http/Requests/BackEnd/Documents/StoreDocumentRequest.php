@@ -21,6 +21,8 @@ class StoreDocumentRequest extends FormRequest
 			'documentTypes'   => ['array'],
 			'sender'          => ['string', 'nullable'],
 			'reciver'          => ['string', 'nullable'],
+			'dateOfBublish'     => ['string', 'nullable'],
+			'numberOfPaper'     => ['string', 'nullable'],
 		];
 	}
 }

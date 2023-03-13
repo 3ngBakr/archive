@@ -72,11 +72,13 @@ return [
 			'model'   => 'document',
 			'tab'     => 'download_center',
 			'icon'    => 'bx bx-check-shield',
-			'fields'  => ['Name', 'Description', 'Document Types' , 'User'],
+			'fields'  => ['Name','Description','date Of Bublish','number Of Paper' , 'Document Types' , 'User',],
 			'columns' => [
 				
 				['data' => 'name', 'name' => 'name'],
 				['data' => 'description', 'name' => 'description'],
+				['data' => 'dateOfBublish', 'name' => 'dateOfBublish'],
+				['data' => 'numberOfPaper', 'name' => 'numberOfPaper'],
 				['data' => 'documentTypes', 'name' => 'documentTypes.name'],
 				['data' => 'users', 'name' => 'users.name'],
 			],

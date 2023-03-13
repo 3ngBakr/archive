@@ -304,5 +304,6 @@ return [
 	'team-members'                         => 'اعضاء الفريق',
 	'calendar'                             => 'التقويم',
 	'messenger'                            => 'مراسل',
-
+'date_Of_Bublish'      =>'تاريخ النشر',
+'number_Of_Paper'     =>'رقم السند',
 ];

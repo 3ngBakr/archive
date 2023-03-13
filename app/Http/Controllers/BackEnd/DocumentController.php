@@ -87,7 +87,7 @@ class DocumentController extends BackendController
 
 	public function update(UpdateDocumentRequest $request, Document $document): \Illuminate\Http\RedirectResponse
 	{
-		$document = \Auth::user()->documents()->create($request->validated());
+		// $document = \Auth::user()->documents()->create($request->validated());
 		$document->update($request->validated());
 		$document->documentTypes()->sync($request->input('documentTypes', []));
 

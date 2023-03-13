@@ -1,11 +1,11 @@
 <div class="mb-3">
-    <label class="form-label required" for="dateOfBublish">@lang('تاريخ النشر')</label>
+    <label class="form-label required" for="dateOfBublish">@lang(' date Of Bublish')</label>
     <input class="form-control {{ $errors->has('dateOfBublish') ? 'is-invalid' : '' }}"
            type="text"
            id="dateOfBublish"
           placeholder="تاريخ النشر"
            name="dateOfBublish"
-           value="{{ isset($row) ? old('dateOfBublish', $row->name) : old('dateOfBublish', '') }}"
+           value="{{ isset($row) ? old('dateOfBublish', $row->dateOfBublish) : old('dateOfBublish', '') }}"
            required aria-describedby="dateOfBublish-invalid">
     @if($errors->has('dateOfBublish'))
         <div id="dateOfBublish-invalid" class="invalid-feedback">
@@ -13,7 +13,21 @@
         </div>
     @endif
 </div>
-
+<div class="mb-3">
+    <label class="form-label required" for="numberOfPaper">@lang(' رقم السند')</label>
+    <input class="form-control {{ $errors->has('numberOfPaper') ? 'is-invalid' : '' }}"
+           type="text"
+           id="numberOfPaper"
+          placeholder="تاريخ النشر"
+           name="numberOfPaper"
+           value="{{ isset($row) ? old('numberOfPaper', $row->numberOfPaper) : old('numberOfPaper', '') }}"
+           required aria-describedby="numberOfPaper-invalid">
+    @if($errors->has('numberOfPaper'))
+        <div id="numberOfPaper-invalid" class="invalid-feedback">
+            {{ $errors->first('numberOfPaper') }}
+        </div>
+    @endif
+</div>
 
 <div class="mb-3">
     <label class="form-label required" for="name">@lang('العنوان')</label>
@@ -32,34 +46,34 @@
 </div>
 
 <div class="mb-3">
-    <label class="form-label required" for="name">@lang('المرسل')</label>
-    <input class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}"
+    <label class="form-label required" for="sender">@lang('المرسل')</label>
+    <input class="form-control {{ $errors->has('sender') ? 'is-invalid' : '' }}"
            type="text"
-           id="name"
+           id="sender"
           placeholder="المرسل"
            name="sender"
-           value="{{ isset($row) ? old('name', $row->name) : old('name', '') }}"
+           value="{{ isset($row) ? old('name', $row->sender) : old('sender', '') }}"
            required aria-describedby="name-invalid">
-    @if($errors->has('name'))
+    @if($errors->has('sender'))
         <div id="name-invalid" class="invalid-feedback">
-            {{ $errors->first('name') }}
+            {{ $errors->first('sender') }}
         </div>
     @endif
 </div>
 
 
 <div class="mb-3">
-    <label class="form-label required" for="name">@lang('المرسل اليه')</label>
-    <input class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}"
+    <label class="form-label required" for="reciver">@lang('المرسل اليه')</label>
+    <input class="form-control {{ $errors->has('reciver') ? 'is-invalid' : '' }}"
            type="text"
-           id="name"
+           id="reciver"
           placeholder="المرسل اليه"
            name="reciver"
-           value="{{ isset($row) ? old('name', $row->name) : old('name', '') }}"
+           value="{{ isset($row) ? old('reciver', $row->reciver) : old('reciver', '') }}"
            required aria-describedby="name-invalid">
-    @if($errors->has('name'))
+    @if($errors->has('reciver'))
         <div id="name-invalid" class="invalid-feedback">
-            {{ $errors->first('name') }}
+            {{ $errors->first('reciver') }}
         </div>
     @endif
 </div>
@@ -118,6 +132,7 @@
            type="file"
            id="file"
            name="file"
+        
            accept=".{{ implode(",.", config('ryada.file_mimes.downloads')) }}"
            {{ isset($row) ? '': 'required' }} aria-describedby="file-invalid">
     @if($errors->has('file'))
