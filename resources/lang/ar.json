@@ -275,6 +275,8 @@
     "Contacts List": "قائمة التواصل",
     "Show Contact": "عرض التواصل",
     "Phone": "الرقم",
+    "sender": "المرسل",
+    "reciver": "المستلم",
     "Subject": "الموضوع",
     "Message": "الرسالة",
     "Attach File": "أرفق ملف",

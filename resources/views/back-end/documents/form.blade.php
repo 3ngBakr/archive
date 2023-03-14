@@ -1,5 +1,5 @@
 <div class="mb-3">
-    <label class="form-label required" for="dateOfBublish">@lang(' date Of Bublish')</label>
+    <label class="form-label required" for="dateOfBublish">@lang('تاريخ النشر')</label>
     <input class="form-control {{ $errors->has('dateOfBublish') ? 'is-invalid' : '' }}"
            type="text"
            id="dateOfBublish"
